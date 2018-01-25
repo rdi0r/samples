@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jquery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
+
+    <style>
+        .divBG {
+            background-color: black;
+        }
+
+        .divLink {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="divBG" id="content">
+        <a id="changeLink" class="divLink" href="">Click</a>
+    </div>
+    <div id="hidden">
+        <a id="changeLinkShow" class="divLink" href="">Click for change</a>
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        $("#hidden").hide();
+
+        //CSS changes
+        $("#changeLink").click(function () {
+            $(".divBG").css(
+                {
+                    "background-color": "#fff"
+                });
+        });
+        
+            $(".divLink").css(
+                {
+                    "color": "#000"
+                });
+    })
+</script>
+
+</html>
