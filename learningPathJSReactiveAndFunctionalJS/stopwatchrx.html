@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Stop watch with Rx</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" href="./stopwatchrx.css">  
+</head>
+<body>
+    <div class="wrapper">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <div id="clock">
+            <span id="minutes"></span>:<span id="seconds"></span>:<span id="milliseconds"></span>
+        </div>
+        <button id="reset">Reset</button>
+    </div>
+</body>
+<script src="https://unpkg.com/rxjs@5.5.6/bundles/Rx.min.js"></script>
+<script src="./stopwatchrx.js"></script>
+</html>
