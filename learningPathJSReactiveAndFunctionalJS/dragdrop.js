@@ -16,14 +16,14 @@ const mouseDrag$ = mousedown$.flatMap(mdEvent => {
   
   return mousemove$.map(mmEvent => {
       return {
-          left: mmEvent.clientX - startX,
-          top: mmEvent.clientY - startY
+          x: mmEvent.clientX - startX,
+          y: mmEvent.clientY - startY          
       }
   }).takeUntil(mouseup$);
 })
 
 mouseDrag$.subscribe(pos => {
     console.log(pos);
-    dragable.style.top = pos.top + 'px';
-    dragable.style.left = pos.left+ 'px';
+    dragable.style.top = pos.y + 'px';
+    dragable.style.left = pos.x+ 'px';    
 })

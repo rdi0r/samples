@@ -30,7 +30,7 @@ const pad = (number) => number <= 9 ? ('0' + number) : number.toString();
 const toTime = (time) => ({
     milliseconds: Math.floor(time%100),
     seconds: Math.floor((time/100)%60),
-    minutes: Math.floor((time/6000))
+    minutes: Math.floor(time/6000)
 })
 
 const render = (time) => {

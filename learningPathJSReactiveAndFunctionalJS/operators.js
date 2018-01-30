@@ -2,6 +2,7 @@
 
 
 const of$ = Rx.Observable.of(1,2,3);
+//const from$ = Rx.Observable.from([1,2,3,4])
 
 of$.subscribe(
     val => console.log("of next value: " + val),
@@ -24,20 +25,39 @@ const from$ = Rx.Observable.fromPromise(prom);
 const empty$ = Rx.Observable.empty();
 
 empty$.subscribe(
-    val => console.log("next value: " + val),
+    val => console.log("empty next value: " + val),
     err => console.log("error: " + err),
-    () => console.log("done with empty")
-
+    () => console.log("empty done with empty")
 )
 
-const from$ = Rx.Observable.from([1,2,3,4])
+//never does nothing
+const never$ = Rx.Observable.never();
 
-
-
-from$.subscribe(
-    val => console.log("from next value: " + val),
-    err => console.log("from error: " + err),
-    () => console.log("from done")
+never$.subscribe(
+    val => console.log("never next value: " + val),
+    err => console.log("never error: " + err),
+    ()  => console.log("never done")
 )
+//
+
+const create$ = Rx.Observable.create(observer => {
+    observer.next(1);
+    observer.next(2);
+    observer.next(3);
+    observer.next("ña");
+    observer.complete();
+})
+create$.subscribe(
+    val => console.log("from create value: "+ val),
+    err => console.log("from an error in create" + err),
+    () =>  console.log("create ended")
+)
+
+
+// from$.subscribe(
+//     val => console.log("from next value: " + val),
+//     err => console.log("from error: " + err),
+//     () => console.log("from done")
+// )
 
 
